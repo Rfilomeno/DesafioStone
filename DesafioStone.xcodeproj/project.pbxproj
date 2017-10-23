@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD79E8E91F9E5D8100798D9D /* Compra.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD79E8E81F9E5D8100798D9D /* Compra.swift */; };
+		FD79E8EB1F9E68E000798D9D /* TFmaxLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD79E8EA1F9E68E000798D9D /* TFmaxLength.swift */; };
 		FDB4E29E1F9D5A130059BC87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4E29D1F9D5A130059BC87 /* AppDelegate.swift */; };
 		FDB4E2A31F9D5A130059BC87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDB4E2A11F9D5A130059BC87 /* Main.storyboard */; };
 		FDB4E2A51F9D5A130059BC87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB4E2A41F9D5A130059BC87 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD79E8E81F9E5D8100798D9D /* Compra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compra.swift; sourceTree = "<group>"; };
+		FD79E8EA1F9E68E000798D9D /* TFmaxLength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFmaxLength.swift; sourceTree = "<group>"; };
 		FDB4E29A1F9D5A130059BC87 /* DesafioStone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioStone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB4E29D1F9D5A130059BC87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDB4E2A21F9D5A130059BC87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 			children = (
 				FDB4E2B81F9D5FEE0059BC87 /* Item.swift */,
 				FDB4E2B61F9D5DA00059BC87 /* MyCell.swift */,
+				FD79E8E81F9E5D8100798D9D /* Compra.swift */,
+				FD79E8EA1F9E68E000798D9D /* TFmaxLength.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,6 +184,8 @@
 				FDB4E2B31F9D5A620059BC87 /* ViewController.swift in Sources */,
 				FDB4E2BB1F9D79A00059BC87 /* CarrinhoViewController.swift in Sources */,
 				FDB4E29E1F9D5A130059BC87 /* AppDelegate.swift in Sources */,
+				FD79E8EB1F9E68E000798D9D /* TFmaxLength.swift in Sources */,
+				FD79E8E91F9E5D8100798D9D /* Compra.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

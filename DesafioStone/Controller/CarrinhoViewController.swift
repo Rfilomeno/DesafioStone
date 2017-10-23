@@ -7,6 +7,15 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource{
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lbValorTotal: UILabel!
+    @IBOutlet weak var nomeTF: UITextField!
+    @IBOutlet weak var cartaoTF: UITextField!
+    @IBOutlet weak var mesVencTF: UITextField!
+    @IBOutlet weak var anoVencTF: UITextField!
+    @IBOutlet weak var cvvTF: UITextField!
+    
+    
+    
+    
     
     var itens:[Item] = []
     var total = 0.0
@@ -14,6 +23,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         print(itens.count)
         calculaTotal()
         // Do any additional setup after loading the view.
@@ -46,6 +56,37 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource{
         }
         lbValorTotal.text = moeda + String(total)
     }
+    
+    @IBAction func finalizarCompra(_ sender: UIButton) {
+        if nomeTF == nil || cartaoTF == nil || mesVencTF == nil || anoVencTF == nil || cvvTF == nil{
+            return
+        }
+        let nome = nomeTF.text
+        let cartao = cartaoTF.text
+        let mes = mesVencTF.text
+        let ano = anoVencTF.text
+        let cvv = Int(cvvTF.text!)
+        
+        let compra = Compra(card_number: cartao!, value: total, cvv: cvv!, card_holder_name: nome!, exp_date: "\(mes!)/\(ano!)")
+        
+        print("nome: \(compra.card_holder_name)")
+        print("cartão: \(compra.card_number)")
+        print("Venc. \(compra.exp_date)")
+        print("cvv: \(compra.cvv)")
+        print("valor: \(String(compra.value))")
+        print("data: \(compra.data_compra)")
+    }
+    
+    
+    
+    
+//    {
+//    "card_number":"1234123412341234",
+//    "value":7990,
+//    "cvv":789,
+//    "card_holder_name":"Luke Skywalker",
+//    "exp_date":"12/24"
+//    }
 
 
 }
