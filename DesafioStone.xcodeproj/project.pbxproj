@@ -15,6 +15,7 @@
 		FDB4E2B51F9D5CAB0059BC87 /* ListaDeItensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4E2B41F9D5CAB0059BC87 /* ListaDeItensViewController.swift */; };
 		FDB4E2B71F9D5DA00059BC87 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4E2B61F9D5DA00059BC87 /* MyCell.swift */; };
 		FDB4E2B91F9D5FEE0059BC87 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4E2B81F9D5FEE0059BC87 /* Item.swift */; };
+		FDB4E2BB1F9D79A00059BC87 /* CarrinhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4E2BA1F9D79A00059BC87 /* CarrinhoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FDB4E2B41F9D5CAB0059BC87 /* ListaDeItensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaDeItensViewController.swift; sourceTree = "<group>"; };
 		FDB4E2B61F9D5DA00059BC87 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		FDB4E2B81F9D5FEE0059BC87 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		FDB4E2BA1F9D79A00059BC87 /* CarrinhoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrinhoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				FDB4E2B11F9D5A620059BC87 /* ViewController.swift */,
 				FDB4E2B41F9D5CAB0059BC87 /* ListaDeItensViewController.swift */,
+				FDB4E2BA1F9D79A00059BC87 /* CarrinhoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				FDB4E2B51F9D5CAB0059BC87 /* ListaDeItensViewController.swift in Sources */,
 				FDB4E2B71F9D5DA00059BC87 /* MyCell.swift in Sources */,
 				FDB4E2B31F9D5A620059BC87 /* ViewController.swift in Sources */,
+				FDB4E2BB1F9D79A00059BC87 /* CarrinhoViewController.swift in Sources */,
 				FDB4E29E1F9D5A130059BC87 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

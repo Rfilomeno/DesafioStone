@@ -5,12 +5,16 @@ import UIKit
 class ListaDeItensViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var itens: [Item] = []
-    var itensSelecionados:[Item] = [Item]()
+    var itensSelecionados:[Item] = []
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cartLabel: UILabel!
+    @IBOutlet weak var btnComprar: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        btnComprar.isEnabled = false
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 70
@@ -86,23 +90,39 @@ class ListaDeItensViewController: UIViewController, UITableViewDelegate, UITable
             if cell.accessoryType == UITableViewCellAccessoryType.none{
                 cell.accessoryType = UITableViewCellAccessoryType.checkmark
                 itensSelecionados.append(itens[indexPath.row])
+                
                 print("item: \(itens[indexPath.row].title), adicionado com sucesso")
-                cartLabel.text = String(itensSelecionados.count)
+                cartLabel.text = String(self.itensSelecionados.count)
+                if itensSelecionados.count > 0{
+                    btnComprar.isEnabled = true
+                }
             }else{
                 cell.accessoryType = UITableViewCellAccessoryType.none
                 for i in 0...itensSelecionados.count-1{
                     if itensSelecionados[i].title == itens[indexPath.row].title{
                         itensSelecionados.remove(at: i)
                         cartLabel.text = String(itensSelecionados.count)
+                        
                         break
                     }
                 }
-                
+                if itensSelecionados.count == 0{
+                    btnComprar.isEnabled = false
+                }
                 print(itensSelecionados.count)
-                
-                
+               
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let view = segue.destination as! CarrinhoViewController
+        view.add(itens: itensSelecionados)
+        
+    }
+    
+    
+    
     
 }
