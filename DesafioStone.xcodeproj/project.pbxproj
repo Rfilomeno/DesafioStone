@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		FDB4E29E1F9D5A130059BC87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4E29D1F9D5A130059BC87 /* AppDelegate.swift */; };
-		FDB4E2A01F9D5A130059BC87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4E29F1F9D5A130059BC87 /* ViewController.swift */; };
 		FDB4E2A31F9D5A130059BC87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDB4E2A11F9D5A130059BC87 /* Main.storyboard */; };
 		FDB4E2A51F9D5A130059BC87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB4E2A41F9D5A130059BC87 /* Assets.xcassets */; };
 		FDB4E2A81F9D5A130059BC87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDB4E2A61F9D5A130059BC87 /* LaunchScreen.storyboard */; };
+		FDB4E2B31F9D5A620059BC87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4E2B11F9D5A620059BC87 /* ViewController.swift */; };
+		FDB4E2B51F9D5CAB0059BC87 /* ListaDeItensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4E2B41F9D5CAB0059BC87 /* ListaDeItensViewController.swift */; };
+		FDB4E2B71F9D5DA00059BC87 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4E2B61F9D5DA00059BC87 /* MyCell.swift */; };
+		FDB4E2B91F9D5FEE0059BC87 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4E2B81F9D5FEE0059BC87 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FDB4E29A1F9D5A130059BC87 /* DesafioStone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioStone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB4E29D1F9D5A130059BC87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FDB4E29F1F9D5A130059BC87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FDB4E2A21F9D5A130059BC87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FDB4E2A41F9D5A130059BC87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDB4E2A71F9D5A130059BC87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FDB4E2A91F9D5A130059BC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDB4E2B11F9D5A620059BC87 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FDB4E2B41F9D5CAB0059BC87 /* ListaDeItensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaDeItensViewController.swift; sourceTree = "<group>"; };
+		FDB4E2B61F9D5DA00059BC87 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		FDB4E2B81F9D5FEE0059BC87 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,41 @@
 		FDB4E29C1F9D5A130059BC87 /* DesafioStone */ = {
 			isa = PBXGroup;
 			children = (
+				FDB4E2B01F9D5A620059BC87 /* Controller */,
+				FDB4E2B21F9D5A620059BC87 /* Model */,
+				FDB4E2AF1F9D5A620059BC87 /* View */,
 				FDB4E29D1F9D5A130059BC87 /* AppDelegate.swift */,
-				FDB4E29F1F9D5A130059BC87 /* ViewController.swift */,
 				FDB4E2A11F9D5A130059BC87 /* Main.storyboard */,
 				FDB4E2A41F9D5A130059BC87 /* Assets.xcassets */,
 				FDB4E2A61F9D5A130059BC87 /* LaunchScreen.storyboard */,
 				FDB4E2A91F9D5A130059BC87 /* Info.plist */,
 			);
 			path = DesafioStone;
+			sourceTree = "<group>";
+		};
+		FDB4E2AF1F9D5A620059BC87 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FDB4E2B01F9D5A620059BC87 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FDB4E2B11F9D5A620059BC87 /* ViewController.swift */,
+				FDB4E2B41F9D5CAB0059BC87 /* ListaDeItensViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FDB4E2B21F9D5A620059BC87 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FDB4E2B81F9D5FEE0059BC87 /* Item.swift */,
+				FDB4E2B61F9D5DA00059BC87 /* MyCell.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +169,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDB4E2A01F9D5A130059BC87 /* ViewController.swift in Sources */,
+				FDB4E2B91F9D5FEE0059BC87 /* Item.swift in Sources */,
+				FDB4E2B51F9D5CAB0059BC87 /* ListaDeItensViewController.swift in Sources */,
+				FDB4E2B71F9D5DA00059BC87 /* MyCell.swift in Sources */,
+				FDB4E2B31F9D5A620059BC87 /* ViewController.swift in Sources */,
 				FDB4E29E1F9D5A130059BC87 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
