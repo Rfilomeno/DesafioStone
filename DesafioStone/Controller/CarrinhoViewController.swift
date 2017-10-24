@@ -14,9 +14,6 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource{
     @IBOutlet weak var cvvTF: UITextField!
     
     
-    
-    
-    
     var itens:[Item] = []
     var total = 0.0
     var moeda = "R$ "
@@ -58,9 +55,9 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource{
     }
     
     @IBAction func finalizarCompra(_ sender: UIButton) {
-        if nomeTF == nil || cartaoTF == nil || mesVencTF == nil || anoVencTF == nil || cvvTF == nil{
-            return
-        }
+        if nomeTF.text == "" || cartaoTF.text == "" || mesVencTF.text == "" || anoVencTF.text == "" || cvvTF.text == ""{
+            print("Algum(s) valor(es) não preenchido(s)")
+        }else{
         let nome = nomeTF.text
         let cartao = cartaoTF.text
         let mes = mesVencTF.text
@@ -69,24 +66,36 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource{
         
         let compra = Compra(card_number: cartao!, value: total, cvv: cvv!, card_holder_name: nome!, exp_date: "\(mes!)/\(ano!)")
         
-        print("nome: \(compra.card_holder_name)")
-        print("cartão: \(compra.card_number)")
-        print("Venc. \(compra.exp_date)")
-        print("cvv: \(compra.cvv)")
-        print("valor: \(String(compra.value))")
-        print("data: \(compra.data_compra)")
+
+        enviaJson(compra: compra)
+        let database = TransacoesDao()
+        database.adicionaTransacao(compra)
+        database.getTransacoes()
+        
+        }
     }
     
-    
-    
-    
-//    {
-//    "card_number":"1234123412341234",
-//    "value":7990,
-//    "cvv":789,
-//    "card_holder_name":"Luke Skywalker",
-//    "exp_date":"12/24"
-//    }
+    func enviaJson(compra: Compra){
+        let url = URL(string: "https://private-9e3ae-rodrigofilomeno.apiary-mock.com/questions")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        request.httpBody = "{\n  \"card_number\": \"\(compra.card_number)\",\n  \"value\": \(compra.value),\n  \"cvv\": \(compra.cvv),\n  \"card_holder_name\": \"\(compra.card_holder_name)\",\n  \"exp_date\": \"\(compra.exp_date)\"\n}".data(using: .utf8)
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let response = response, let data = data {
+                //entrar com caixa de dialogo falando que a compra foi bem sucedida
+                print(response)
+                //print(String(data: data, encoding: .utf8))
+            } else {
+                //entrar com caixa de dialogo falando que a compra foi mal sucedida
+                print(error)
+            }
+        }
+        
+        task.resume()
+    }
 
 
 }

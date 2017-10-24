@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import SQLite
 
 class ViewController: UIViewController {
-
+    
+    
     @IBOutlet weak var myIndicator: UIActivityIndicatorView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         myIndicator.isHidden = true
+        let database = TransacoesDao()
+        database.createDB()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
