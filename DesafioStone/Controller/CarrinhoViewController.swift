@@ -66,12 +66,17 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource{
         
         let compra = Compra(card_number: cartao!, value: total, cvv: cvv!, card_holder_name: nome!, exp_date: "\(mes!)/\(ano!)")
         
-
         enviaJson(compra: compra)
         let database = TransacoesDao()
+            let digitosDoCartao = Array(compra.card_number.characters)
+            if digitosDoCartao.count > 4{
+                var ultimosDigitos = String(digitosDoCartao[digitosDoCartao.count-4])
+                ultimosDigitos += String(digitosDoCartao[digitosDoCartao.count-3])
+                ultimosDigitos += String(digitosDoCartao[digitosDoCartao.count-2])
+                ultimosDigitos += String(digitosDoCartao[digitosDoCartao.count-1])
+                compra.card_number = ultimosDigitos
+            }
         database.adicionaTransacao(compra)
-        database.getTransacoes()
-        
         }
     }
     
@@ -80,6 +85,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource{
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
         
         request.httpBody = "{\n  \"card_number\": \"\(compra.card_number)\",\n  \"value\": \(compra.value),\n  \"cvv\": \(compra.cvv),\n  \"card_holder_name\": \"\(compra.card_holder_name)\",\n  \"exp_date\": \"\(compra.exp_date)\"\n}".data(using: .utf8)
         

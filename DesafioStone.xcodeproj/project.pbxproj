@@ -22,6 +22,9 @@
 		FDB4E2B71F9D5DA00059BC87 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4E2B61F9D5DA00059BC87 /* MyCell.swift */; };
 		FDB4E2B91F9D5FEE0059BC87 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4E2B81F9D5FEE0059BC87 /* Item.swift */; };
 		FDB4E2BB1F9D79A00059BC87 /* CarrinhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4E2BA1F9D79A00059BC87 /* CarrinhoViewController.swift */; };
+		FDC5F5101F9F9E47007F665D /* TransacoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5F50F1F9F9E47007F665D /* TransacoesViewController.swift */; };
+		FDC5F5181F9FA147007F665D /* Transacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5F5171F9FA147007F665D /* Transacao.swift */; };
+		FDC5F51A1F9FA6E4007F665D /* TransacaoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5F5191F9FA6E4007F665D /* TransacaoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +116,9 @@
 		FDB4E2B61F9D5DA00059BC87 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		FDB4E2B81F9D5FEE0059BC87 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FDB4E2BA1F9D79A00059BC87 /* CarrinhoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrinhoViewController.swift; sourceTree = "<group>"; };
+		FDC5F50F1F9F9E47007F665D /* TransacoesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransacoesViewController.swift; sourceTree = "<group>"; };
+		FDC5F5171F9FA147007F665D /* Transacao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transacao.swift; sourceTree = "<group>"; };
+		FDC5F5191F9FA6E4007F665D /* TransacaoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransacaoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +210,7 @@
 				FDB4E2B11F9D5A620059BC87 /* ViewController.swift */,
 				FDB4E2B41F9D5CAB0059BC87 /* ListaDeItensViewController.swift */,
 				FDB4E2BA1F9D79A00059BC87 /* CarrinhoViewController.swift */,
+				FDC5F50F1F9F9E47007F665D /* TransacoesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -215,6 +222,8 @@
 				FDB4E2B61F9D5DA00059BC87 /* MyCell.swift */,
 				FD79E8E81F9E5D8100798D9D /* Compra.swift */,
 				FD79E8EA1F9E68E000798D9D /* TFmaxLength.swift */,
+				FDC5F5171F9FA147007F665D /* Transacao.swift */,
+				FDC5F5191F9FA6E4007F665D /* TransacaoCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -357,8 +366,11 @@
 				FD7EC44F1F9EBD43008BC771 /* TransacoesDao.swift in Sources */,
 				FDB4E2B31F9D5A620059BC87 /* ViewController.swift in Sources */,
 				FDB4E2BB1F9D79A00059BC87 /* CarrinhoViewController.swift in Sources */,
+				FDC5F51A1F9FA6E4007F665D /* TransacaoCell.swift in Sources */,
 				FDB4E29E1F9D5A130059BC87 /* AppDelegate.swift in Sources */,
+				FDC5F5101F9F9E47007F665D /* TransacoesViewController.swift in Sources */,
 				FD79E8EB1F9E68E000798D9D /* TFmaxLength.swift in Sources */,
+				FDC5F5181F9FA147007F665D /* Transacao.swift in Sources */,
 				FD79E8E91F9E5D8100798D9D /* Compra.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

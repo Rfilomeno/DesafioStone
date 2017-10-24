@@ -13,7 +13,7 @@ public class TransacoesDao{
     let cartao = Expression<String>("cartao")
     let nomePortador = Expression<String>("nome")
     
-    func createDB(){
+    init(){
         
         do{
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
@@ -23,7 +23,9 @@ public class TransacoesDao{
         }catch{
             print(error)
         }
-        
+    }
+    
+    func createDB(){
         
         let createTable = self.trasacoesTable.create { (table) in
             table.column(self.id, primaryKey: true)
@@ -43,16 +45,7 @@ public class TransacoesDao{
     }
     
     func adicionaTransacao(_ compra: Compra){
-        do{
-            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            let fileUrl = documentDirectory.appendingPathComponent("transacoes").appendingPathExtension("sqlite3")
-            let database = try Connection(fileUrl.path)
-            self.database = database
-        }catch{
-            print(error)
-        }
-        
-        
+    
         let insert =  self.trasacoesTable.insert(self.valor <- compra.value, self.data <- compra.data_compra, self.cartao <- compra.card_number, self.nomePortador <- compra.card_holder_name)
         
         do{
@@ -63,29 +56,18 @@ public class TransacoesDao{
         }
     }
     
-    func getTransacoes(){
-        do{
-            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            let fileUrl = documentDirectory.appendingPathComponent("transacoes").appendingPathExtension("sqlite3")
-            let database = try Connection(fileUrl.path)
-            self.database = database
-        }catch{
-            print(error)
-        }
+    func getTransacoes() -> [Transacao]{
         
         do{
-            let transacoes = try self.database.prepare(self.trasacoesTable)
-            
-                for transacao in transacoes{
-                    print("Id: \(transacao[self.id])")
-                    print("Valor: \(transacao[self.valor])")
-                    print("Data: \(transacao[self.data])")
-                    print("Cartão: \(transacao[self.cartao])")
-                    print("Nome: \(transacao[self.nomePortador])")
-                    print("--------------------------------------")
+            let resposta = try self.database.prepare(self.trasacoesTable)
+            var transacoes: [Transacao] = []
+                for transacao in resposta{
+                    transacoes.append(Transacao(id: transacao[self.id], valor: transacao[self.valor], data: transacao[self.data], cartao: transacao[self.cartao], nome: transacao[self.nomePortador]))
                 }
+            return transacoes
         }catch{
             print(error)
+            return []
         }
     }
 }
