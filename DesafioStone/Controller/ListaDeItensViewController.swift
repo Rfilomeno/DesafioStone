@@ -24,11 +24,6 @@ class ListaDeItensViewController: UIViewController, UITableViewDelegate, UITable
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func downloadJson(){
         let url = NSURL(string: "https://raw.githubusercontent.com/stone-pagamentos/desafio-mobile/master/products.json")
@@ -55,13 +50,20 @@ class ListaDeItensViewController: UIViewController, UITableViewDelegate, UITable
                         }
                         
                     }
-                    print(self.itens.count)
+                    //print(self.itens.count)
                 }}
             
             
         } ).resume()
         
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itens.count

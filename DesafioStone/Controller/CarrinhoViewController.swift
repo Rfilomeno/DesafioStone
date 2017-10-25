@@ -21,8 +21,9 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(itens.count)
+        //print(itens.count)
         calculaTotal()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -78,6 +79,7 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource{
             }
         database.adicionaTransacao(compra)
         }
+        confirmacaoDaCompra(true)
     }
     
     func enviaJson(compra: Compra){
@@ -93,15 +95,38 @@ class CarrinhoViewController: UIViewController, UITableViewDataSource{
             if let response = response, let data = data {
                 //entrar com caixa de dialogo falando que a compra foi bem sucedida
                 print(response)
-                //print(String(data: data, encoding: .utf8))
+                print(String(data: data, encoding: .utf8))
+                
+                
+                
             } else {
                 //entrar com caixa de dialogo falando que a compra foi mal sucedida
                 print(error)
+                
+                
+                
             }
         }
         
         task.resume()
     }
 
+    func confirmacaoDaCompra(_ confirmacao:Bool){
+        
+        if confirmacao{
+            let alert = UIAlertController(title: "Confirmação de compra", message: "Compra realizada com sucesso!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok", style: UIAlertActionStyle.default, handler: {action in
+                self.performSegue(withIdentifier: "transacoesView", sender: self)
+                
+            }))
+            present(alert, animated: true, completion: nil)
+                
+        }else{
+            let alert = UIAlertController(title: "Confirmação de compra", message: "Ocorreu um erro no processamento dos dados, compra não efetuada.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok", style: UIAlertActionStyle.default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            
+        }
+    }
 
 }

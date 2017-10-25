@@ -11,7 +11,7 @@ import SQLite
 
 class ViewController: UIViewController {
     
-    
+    var itens:[Item] = []
     @IBOutlet weak var myIndicator: UIActivityIndicatorView!
     
     
@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         myIndicator.isHidden = true
         let database = TransacoesDao()
         database.createDB()
+        //database.dropTable()
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -38,6 +39,7 @@ class ViewController: UIViewController {
         myIndicator.isHidden = true
         myIndicator.stopAnimating()
     }
+    
 
 }
 

@@ -163,6 +163,14 @@
 			path = DAO;
 			sourceTree = "<group>";
 		};
+		FDA9A08C1FA108B90009CEBA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FD79E8EA1F9E68E000798D9D /* TFmaxLength.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		FDB4E2911F9D5A130059BC87 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +192,7 @@
 		FDB4E29C1F9D5A130059BC87 /* DesafioStone */ = {
 			isa = PBXGroup;
 			children = (
+				FDA9A08C1FA108B90009CEBA /* Helpers */,
 				FD7EC44D1F9EBD24008BC771 /* DAO */,
 				FDB4E2B01F9D5A620059BC87 /* Controller */,
 				FDB4E2B21F9D5A620059BC87 /* Model */,
@@ -221,7 +230,6 @@
 				FDB4E2B81F9D5FEE0059BC87 /* Item.swift */,
 				FDB4E2B61F9D5DA00059BC87 /* MyCell.swift */,
 				FD79E8E81F9E5D8100798D9D /* Compra.swift */,
-				FD79E8EA1F9E68E000798D9D /* TFmaxLength.swift */,
 				FDC5F5171F9FA147007F665D /* Transacao.swift */,
 				FDC5F5191F9FA6E4007F665D /* TransacaoCell.swift */,
 			);

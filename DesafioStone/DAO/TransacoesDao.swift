@@ -24,6 +24,15 @@ public class TransacoesDao{
             print(error)
         }
     }
+    func dropTable(){
+        let dropTable = self.trasacoesTable.drop()
+        do{
+            try database.run(dropTable)
+            print("Tabela apagada com sucesso")
+        }catch{
+            print(error)
+        }
+    }
     
     func createDB(){
         

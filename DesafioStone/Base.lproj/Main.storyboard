@@ -575,6 +575,7 @@
                         <outlet property="mesVencTF" destination="BsG-bz-Nos" id="Bm7-D6-Ly4"/>
                         <outlet property="nomeTF" destination="fK9-2M-cif" id="93N-YS-0E6"/>
                         <outlet property="tableView" destination="QMd-l4-3s3" id="FJZ-dD-LPA"/>
+                        <segue destination="xA5-Bu-2j4" kind="show" identifier="transacoesView" id="vG3-TO-Tuf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ags-dp-dAE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -605,4 +606,7 @@
         <image name="stoneimg" width="850" height="250"/>
         <image name="store" width="397" height="127"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="vG3-TO-Tuf"/>
+    </inferredMetricsTieBreakers>
 </document>
